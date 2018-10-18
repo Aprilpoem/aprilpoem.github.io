@@ -19,8 +19,10 @@ HEAD指针指向当前版本，`git reset --hard HEAD^`可以回退到上一个�
 `git diff`    #是工作区(work dict)和暂存区(stage)的比较
 `git diff --cached `   #是暂存区(stage)和分支(master)的比较
 `git diff HEAD -- <file> `:打印出来的结果“+”代表工作区新增加的内容，“-”代表版本库新增加的内容
-
 - - -
+
+<!--more-->
+
 **关于撤销**
 `git checkout -- <file>`撤销工作区的修改
 `git reset HEAD <file>`如果已经add到暂存区，该指令是撤销暂存区里的修改，然后再执行checkout撤销工作区修改
