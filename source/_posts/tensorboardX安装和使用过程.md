@@ -1,0 +1,35 @@
+---
+title: TensorboardX 安装和使用
+date: 2018-12-01 23:36:50
+tags: tensorboardX
+---
+
+##TensorboardX 安装和使用
+
+前提：在远程GPU服务器上安装
+
+##install
+
+1.打开终端，连接服务器
+2.激活anaconda环境，`source activate study`
+3.安装tensorflow(cpu版本的就行了因为需要用它来进行网页端的显示,tensorflow-gpu安装的很烦的，要对应版本号的cuda和cudnn)`pip install tensorflow` || 或者从清华源安装 
+4.安装tensorflowX `pip install tensorflowX`
+
+##两次端口转发
+服务器上运行tensorboardx,在本机上打开显示
+`ssh -p55556 -L 16006:127.0.0.1:16007 username@server1_ip`:先把本地端口号16006映射到跳板机端口16007
+`ssh -L 16007:127.0.0.1:6006 username@server2_ip`:从端口16007映射到服务器6006端口
+
+##测试
+运行tensorboardX的运行例子demo.py`python demo.py`
+`tensorboard --logdir runs`
+本地浏览器打开localhost:16006
+---
+遇到的bug:
+> locale.Error:unsupported locale setting//编码不统一的问题
+> 使用`locale`命令
+> `export LC_ALL = en_US.UTF-8` 
+---
+
+## How to use tensorboardX?
+待续

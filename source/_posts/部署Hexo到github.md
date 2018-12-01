@@ -8,7 +8,7 @@ tags: 琐碎
 
 
 基本的步骤是参考[link](https://mp.weixin.qq.com/s?__biz=MjM5MDEyMDk4Mw==&mid=2650166025&idx=1&sn=50a22c1953f57db0240ca2d1363ba47a&scene=21#wechat_redirect)
-
+[这个也很详细](https://lihthub.github.io/2017/09/19/blogging-with-hexo/)
 **踩过的坑**
 > - `hexo d`出现的问题：
    -  `_config.yml`的格式：冒号后面一个空格 ||  除`deploy：`每行开头空两个空格。
@@ -19,4 +19,15 @@ tags: 琐碎
 >挑了很久但最终还是决定用大家都说好的Next啦~
 链接如下：[link](https://github.com/iissnan/hexo-theme-next)
 关于如何自定义可以在`wiki`里看。
+
+**发布博文**
+`hexo new 'name'`
+修改好内容后
+`hexo generate`
+`hexo s`
+在本地查看
+`hexo deploy`推送到博客上
+
+**在hexo里使用Latex**
+找了很多教程，就这个好使啦[link](https://blog.csdn.net/Aoman_Hao/article/details/81381507)
  
