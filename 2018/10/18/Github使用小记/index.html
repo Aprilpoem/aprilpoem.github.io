@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Github使用小记我的记性是真的不太好呀，记录一下常用的git命令 git常用命令 git add &amp;lt;file&amp;gt;把文件修改提交到暂存区 (stage)git commit -m &amp;quot;info&amp;quot;一次性把暂存区的所有内容提交到版本库里每次commit相当于克隆工作区的文件并且记录修改，版本库里有历史版本的文件。HEAD指针指向当前版本，git reset --hard">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github使用小记">
+<meta property="og:url" content="http://yoursite.com/2018/10/18/Github使用小记/index.html">
+<meta property="og:site_name" content="学习小屋">
+<meta property="og:description" content="Github使用小记我的记性是真的不太好呀，记录一下常用的git命令 git常用命令 git add &amp;lt;file&amp;gt;把文件修改提交到暂存区 (stage)git commit -m &amp;quot;info&amp;quot;一次性把暂存区的所有内容提交到版本库里每次commit相当于克隆工作区的文件并且记录修改，版本库里有历史版本的文件。HEAD指针指向当前版本，git reset --hard">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-10-07T01:24:00.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github使用小记">
+<meta name="twitter:description" content="Github使用小记我的记性是真的不太好呀，记录一下常用的git命令 git常用命令 git add &amp;lt;file&amp;gt;把文件修改提交到暂存区 (stage)git commit -m &amp;quot;info&amp;quot;一次性把暂存区的所有内容提交到版本库里每次commit相当于克隆工作区的文件并且记录修改，版本库里有历史版本的文件。HEAD指针指向当前版本，git reset --hard">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Github使用小记</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="/projects_url">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/11/30/机器学习笔记 – 对模型的评估/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/09/24/欢迎来到我的博客/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/10/18/Github使用小记/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/10/18/Github使用小记/&text=Github使用小记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/10/18/Github使用小记/&is_video=false&description=Github使用小记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Github使用小记&body=Check out this article: http://yoursite.com/2018/10/18/Github使用小记/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/10/18/Github使用小记/&name=Github使用小记&description=&lt;h3 id=&#34;Github使用小记&#34;&gt;&lt;a href=&#34;#Github使用小记&#34; class=&#34;headerlink&#34; title=&#34;Github使用小记&#34;&gt;&lt;/a&gt;Github使用小记&lt;/h3&gt;&lt;p&gt;我的记性是真的不太好呀，记录一下常用的git命令&lt;/p&gt;
+&lt;h4 id=&#34;git常用命令&#34;&gt;&lt;a href=&#34;#git常用命令&#34; class=&#34;headerlink&#34; title=&#34;git常用命令&#34;&gt;&lt;/a&gt;git常用命令&lt;/h4&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;git add &amp;lt;file&amp;gt;&lt;/code&gt;把文件修改提交到暂存区 (stage)&lt;br&gt;&lt;code&gt;git commit -m &amp;quot;info&amp;quot;&lt;/code&gt;一次性把暂存区的所有内容提交到版本库里&lt;br&gt;每次commit相当于克隆工作区的文件并且记录修改，版本库里有历史版本的文件。&lt;br&gt;HEAD指针指向当前版本，&lt;code&gt;git reset --hard HEAD^&lt;/code&gt;可以回退到上一个版本&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff&lt;/code&gt;用法：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;git diff&lt;/code&gt;    #是工作区(work dict)和暂存区(stage)的比较&lt;br&gt;&lt;code&gt;git diff --cached&lt;/code&gt;   #是暂存区(stage)和分支(master)的比较&lt;br&gt;&lt;code&gt;git diff HEAD -- &amp;lt;file&amp;gt;&lt;/code&gt;:打印出来的结果“+”代表工作区新增加的内容，“-”代表版本库新增加的内容&lt;/p&gt;
+&lt;hr&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github使用小记"><span class="toc-number">1.</span> <span class="toc-text">Github使用小记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#远程仓库，github提供Git仓库托管服务"><span class="toc-number">1.2.</span> <span class="toc-text">远程仓库，github提供Git仓库托管服务</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Github使用小记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">学习小屋</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-10-18T02:09:10.000Z" itemprop="datePublished">2018-10-18</time>
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">git</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="Github使用小记"><a href="#Github使用小记" class="headerlink" title="Github使用小记"></a>Github使用小记</h3><p>我的记性是真的不太好呀，记录一下常用的git命令</p>
+<h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h4><hr>
+<p><code>git add &lt;file&gt;</code>把文件修改提交到暂存区 (stage)<br><code>git commit -m &quot;info&quot;</code>一次性把暂存区的所有内容提交到版本库里<br>每次commit相当于克隆工作区的文件并且记录修改，版本库里有历史版本的文件。<br>HEAD指针指向当前版本，<code>git reset --hard HEAD^</code>可以回退到上一个版本</p>
+<hr>
+<p><strong><code>git diff</code>用法：</strong><br><code>git diff</code>    #是工作区(work dict)和暂存区(stage)的比较<br><code>git diff --cached</code>   #是暂存区(stage)和分支(master)的比较<br><code>git diff HEAD -- &lt;file&gt;</code>:打印出来的结果“+”代表工作区新增加的内容，“-”代表版本库新增加的内容</p>
+<hr>
+<a id="more"></a>
+<p><strong>关于撤销</strong><br><code>git checkout -- &lt;file&gt;</code>撤销工作区的修改<br><code>git reset HEAD &lt;file&gt;</code>如果已经add到暂存区，该指令是撤销暂存区里的修改，然后再执行checkout撤销工作区修改</p>
+<hr>
+<p><strong>关于删除操作</strong><br><code>git rm &lt;file&gt;</code>用于删除一个文件</p>
+<ul>
+<li><code>rm &lt;file&gt;</code>删除了工作区的文件； <code>git checkout -- file</code>可以恢复</li>
+<li><code>git rm &lt;file&gt;</code>删除了文件，而且把删除记录提交都了暂存区；先<code>git reset HEAD &lt;file&gt; 撤销暂存区里的删除修改</code>，然后再<code>git checkout -- file</code>恢复工作区文件</li>
+<li>想要彻底删除文件，两步操作: 1<code>git rm</code> 2. <code>git commit</code>, 这时候就没法恢复删除的文件了，只能回退到版本库里的最新版本。</li>
+</ul>
+<h4 id="远程仓库，github提供Git仓库托管服务"><a href="#远程仓库，github提供Git仓库托管服务" class="headerlink" title="远程仓库，github提供Git仓库托管服务"></a>远程仓库，github提供Git仓库托管服务</h4><p><strong>本地库推送到远程库</strong></p>
+<ul>
+<li><code>git remote add origin git@github.com:username/reponame.git</code>关联远程库</li>
+<li><code>git push -u origin master</code>把本地库内容推送到远程库<blockquote>
+<p>Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来, 之后只要’git push origin master’就能够更新远程库了(本地库先更新add和commit操作)。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>远程库克隆到本地</strong></p>
+<ul>
+<li>进入文件夹，<code>git clone git@github.com:Aprilpoem/reponame.git</code><br>这样本地文件夹中就出现了reponame的文件夹（git clone + 仓库地址）</li>
+</ul>
+<p><strong>分支</strong></p>
+<p><code>git branch</code>查看已有分支<br><code>git branch &lt;name&gt;</code>创建分支<br><code>git checkout &lt;name&gt;</code>切换分支<br><code>git checkout -b dev</code>:创建一个分支dev并且切换到该分支<br><code>git merge &lt;name&gt;</code>合并某分支到当前分支<br><code>git branch -d &lt;name&gt;</code>删除分支</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="/projects_url">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github使用小记"><span class="toc-number">1.</span> <span class="toc-text">Github使用小记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git常用命令"><span class="toc-number">1.1.</span> <span class="toc-text">git常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#远程仓库，github提供Git仓库托管服务"><span class="toc-number">1.2.</span> <span class="toc-text">远程仓库，github提供Git仓库托管服务</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/10/18/Github使用小记/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/10/18/Github使用小记/&text=Github使用小记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/10/18/Github使用小记/&is_video=false&description=Github使用小记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Github使用小记&body=Check out this article: http://yoursite.com/2018/10/18/Github使用小记/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/10/18/Github使用小记/&title=Github使用小记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/10/18/Github使用小记/&name=Github使用小记&description=&lt;h3 id=&#34;Github使用小记&#34;&gt;&lt;a href=&#34;#Github使用小记&#34; class=&#34;headerlink&#34; title=&#34;Github使用小记&#34;&gt;&lt;/a&gt;Github使用小记&lt;/h3&gt;&lt;p&gt;我的记性是真的不太好呀，记录一下常用的git命令&lt;/p&gt;
+&lt;h4 id=&#34;git常用命令&#34;&gt;&lt;a href=&#34;#git常用命令&#34; class=&#34;headerlink&#34; title=&#34;git常用命令&#34;&gt;&lt;/a&gt;git常用命令&lt;/h4&gt;&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;git add &amp;lt;file&amp;gt;&lt;/code&gt;把文件修改提交到暂存区 (stage)&lt;br&gt;&lt;code&gt;git commit -m &amp;quot;info&amp;quot;&lt;/code&gt;一次性把暂存区的所有内容提交到版本库里&lt;br&gt;每次commit相当于克隆工作区的文件并且记录修改，版本库里有历史版本的文件。&lt;br&gt;HEAD指针指向当前版本，&lt;code&gt;git reset --hard HEAD^&lt;/code&gt;可以回退到上一个版本&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;git diff&lt;/code&gt;用法：&lt;/strong&gt;&lt;br&gt;&lt;code&gt;git diff&lt;/code&gt;    #是工作区(work dict)和暂存区(stage)的比较&lt;br&gt;&lt;code&gt;git diff --cached&lt;/code&gt;   #是暂存区(stage)和分支(master)的比较&lt;br&gt;&lt;code&gt;git diff HEAD -- &amp;lt;file&amp;gt;&lt;/code&gt;:打印出来的结果“+”代表工作区新增加的内容，“-”代表版本库新增加的内容&lt;/p&gt;
+&lt;hr&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Aprilpoem
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="/projects_url">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
