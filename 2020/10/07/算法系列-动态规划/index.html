@@ -77,15 +77,15 @@
         <li><a class="icon" href="/2020/11/03/排序算法/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/10/07/和服务器玩/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/10/07/Image和tensor图像转换问题/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -151,7 +151,7 @@
 <h3 id="word-break-2"><a href="#word-break-2" class="headerlink" title="word break 2"></a>word break 2</h3><p>在之前问题的基础上，需要返回切割的index</p>
 <h3 id="concatented-word"><a href="#concatented-word" class="headerlink" title="concatented word"></a>concatented word</h3><p>给定一个字符串数组，返回其中的concatented words，即至少能够由两个更短的数组中的字符串拼接而成；</p>
 <h3 id="Edit-distance-编辑距离"><a href="#Edit-distance-编辑距离" class="headerlink" title="Edit distance 编辑距离*"></a>Edit distance 编辑距离*</h3><p>有三种字符操作，删除，替换和插入，从word1 最少经过几步操作可以变换到 word2，即求word1和word2的编辑距离，可以用来衡量字符串的相似性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">dp [ i ][ j ] =&gt; [&apos;abbc&apos; , &apos;ac&apos; ] , word1[-1] == word2[-1] == &apos;c&apos;</span><br><span class="line"></span><br><span class="line">dp[ i ][ j ] = dp [i-1][j-1] = dp[m][n]=&gt; [&apos;abb&apos;,&apos;a&apos; ] </span><br><span class="line"></span><br><span class="line">1. delete &apos;b&apos; in &apos;abb&apos; at m position, dp[m-1][n]</span><br><span class="line">2. insert &apos;a&apos; at m+1 position, dp[m][n-1]</span><br><span class="line">3. replace &apos;b&apos; with &apos;a&apos; at m position，dp[m-1][n-1]</span><br><span class="line"></span><br><span class="line"> -------------------------------</span><br><span class="line">|  dp[m-1][n-1] | dp[m-1][n]    |    </span><br><span class="line">| --------------|---------------|</span><br><span class="line">|  dp[m][n-1]   | dp[m][n]      |</span><br><span class="line"></span><br><span class="line">-------------------------------</span><br><span class="line">|  replace.     | delete.       |</span><br><span class="line">| --------------|---------------|</span><br><span class="line">|  insert.      | dp[m][n]      |</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dp [ i ][ j ] =&gt; [&apos;abbc&apos; , &apos;ac&apos; ] , word1[-1] == word2[-1] == &apos;c&apos;</span><br><span class="line"></span><br><span class="line">dp[ i ][ j ] = dp [i-1][j-1] = dp[m][n]=&gt; [&apos;abb&apos;,&apos;a&apos; ] </span><br><span class="line"></span><br><span class="line">1. delete &apos;b&apos; in &apos;abb&apos; at m position, dp[m-1][n]</span><br><span class="line">2. insert &apos;a&apos; at m+1 position, dp[m][n-1]</span><br><span class="line">3. replace &apos;b&apos; with &apos;a&apos; at m position，dp[m-1][n-1]</span><br><span class="line"></span><br><span class="line"> -------------------------------</span><br><span class="line">|  dp[m-1][n-1] | dp[m-1][n]    |    </span><br><span class="line">| --------------|---------------|</span><br><span class="line">|  dp[m][n-1]   | dp[m][n]      |</span><br><span class="line"></span><br><span class="line">-------------------------------</span><br><span class="line">|  replace.     | delete.       |</span><br><span class="line">| --------------|---------------|</span><br><span class="line">|  insert.      | dp[m][n]      |</span><br></pre></td></tr></table></figure>
 <p>当确定好三种操作的dp转换公式，即可自底向上开始一步步编码。</p>
 
   </div>
@@ -200,10 +200,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>

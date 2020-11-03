@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件config123456789101112131415161718192021Host login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379">
+    <meta name="description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件configHost login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379      #跳板机端口    User username       #">
 <meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令">
 <meta property="og:url" content="http://yoursite.com/2020/10/07/和服务器玩/index.html">
 <meta property="og:site_name" content="学习小屋">
-<meta property="og:description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件config123456789101112131415161718192021Host login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379">
+<meta property="og:description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件configHost login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379      #跳板机端口    User username       #">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-10-07T01:24:00.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令">
-<meta name="twitter:description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件config123456789101112131415161718192021Host login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379">
+<meta name="twitter:description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件configHost login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379      #跳板机端口    User username       #">
     
     
         
@@ -74,18 +74,18 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/10/07/算法系列-动态规划/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/10/07/Image和tensor图像转换问题/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2020/10/07/Image和tensor图像转换问题/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/12/01/tensorboardX安装和使用过程/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -147,7 +147,7 @@
   <div class="content" itemprop="articleBody">
     <h4 id="关于ubuntu如何免密码登陆需要两次ssh连接的服务器"><a href="#关于ubuntu如何免密码登陆需要两次ssh连接的服务器" class="headerlink" title="关于ubuntu如何免密码登陆需要两次ssh连接的服务器"></a>关于ubuntu如何免密码登陆需要两次ssh连接的服务器</h4><p>自己完全没有和服务器打交道的经验啊！！</p>
 <p>记录一下</p>
-<h4 id="如何化两次登陆为直接登陆"><a href="#如何化两次登陆为直接登陆" class="headerlink" title="如何化两次登陆为直接登陆"></a>如何化两次登陆为直接登陆</h4><p>在~/.ssh下新建一个文件config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Host login   #任意名字，随便使用</span><br><span class="line"></span><br><span class="line">    HostName 192.168.1.1   #这个是跳板机的IP，支持域名</span><br><span class="line"></span><br><span class="line">    Port 1379      #跳板机端口</span><br><span class="line"></span><br><span class="line">    User username       #跳板机用户username</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/id_rsa   #验证跳板机的秘钥对 -&gt;不写也可以，可以直接上传到跳板机上</span><br><span class="line"></span><br><span class="line">Host nginx      #同样，任意名字，随便起</span><br><span class="line"></span><br><span class="line">    HostName 192.168.1.5  #真正登陆的服务器，不支持域名必须IP地址</span><br><span class="line"></span><br><span class="line">    Port 2000   #服务器的端口</span><br><span class="line"></span><br><span class="line">    User test   #服务器的用户</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/lei.pem    #服务的密钥对，可以和跳板机的一样，也可以不一样</span><br><span class="line"></span><br><span class="line">    ProxyCommand ssh username@login -W %h:%p  #指定代理</span><br></pre></td></tr></table></figure></p>
+<h4 id="如何化两次登陆为直接登陆"><a href="#如何化两次登陆为直接登陆" class="headerlink" title="如何化两次登陆为直接登陆"></a>如何化两次登陆为直接登陆</h4><p>在~/.ssh下新建一个文件config<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host login   #任意名字，随便使用</span><br><span class="line"></span><br><span class="line">    HostName 192.168.1.1   #这个是跳板机的IP，支持域名</span><br><span class="line"></span><br><span class="line">    Port 1379      #跳板机端口</span><br><span class="line"></span><br><span class="line">    User username       #跳板机用户username</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/id_rsa   #验证跳板机的秘钥对 -&gt;不写也可以，可以直接上传到跳板机上</span><br><span class="line"></span><br><span class="line">Host nginx      #同样，任意名字，随便起</span><br><span class="line"></span><br><span class="line">    HostName 192.168.1.5  #真正登陆的服务器，不支持域名必须IP地址</span><br><span class="line"></span><br><span class="line">    Port 2000   #服务器的端口</span><br><span class="line"></span><br><span class="line">    User test   #服务器的用户</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/lei.pem    #服务的密钥对，可以和跳板机的一样，也可以不一样</span><br><span class="line"></span><br><span class="line">    ProxyCommand ssh username@login -W %h:%p  #指定代理</span><br></pre></td></tr></table></figure></p>
 <p>然后直接<code>ssh nginx</code>就可以直接登陆服务器了<br>第一次可能需要输入密码</p>
 <h4 id="如何上传文件到服务器-欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢"><a href="#如何上传文件到服务器-欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢" class="headerlink" title="如何上传文件到服务器(欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢)"></a>如何上传文件到服务器(欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢)</h4><p><code>scp -P端口号 文件/文件夹 username@ip地址：目标地址</code><br>举个例子<br>跳板机地址： 192.168.1.12:2222<br><code>scp -P2222 test.txt wendy@192.168.1.12:/home/des</code>就可以把本机上的test.txt上传到服务器home/des目录下</p>
 <h4 id="如何从服务器上下载文件到本机"><a href="#如何从服务器上下载文件到本机" class="headerlink" title="如何从服务器上下载文件到本机"></a>如何从服务器上下载文件到本机</h4><p><code>scp -P(port)username@serverIP:/path/filename /var/www/local_dir（本地目录）</code><br>举个例子<br><code>scp -P2222 wendy@192.168.1.12:/home/des/test.txt /var/wendy</code><br>把服务器上home/des目录下的test.txt下载到本机/var/wendy目录下</p>
@@ -199,10 +199,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
