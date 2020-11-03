@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="TensorboardX 安装和使用前提：在远程GPU服务器上安装 install1.打开终端，连接服务器2.激活anaconda环境，source activate study3.安装tensorflow(cpu版本的就行了因为需要用它来进行网页端的显示,tensorflow-gpu安装的很烦的，要对应版本号的cuda和cudnn)pip install tensorflow || 或者从清华源">
+<meta name="keywords" content="tensorboardX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorboardX 安装和使用">
+<meta property="og:url" content="http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/index.html">
+<meta property="og:site_name" content="学习小屋">
+<meta property="og:description" content="TensorboardX 安装和使用前提：在远程GPU服务器上安装 install1.打开终端，连接服务器2.激活anaconda环境，source activate study3.安装tensorflow(cpu版本的就行了因为需要用它来进行网页端的显示,tensorflow-gpu安装的很烦的，要对应版本号的cuda和cudnn)pip install tensorflow || 或者从清华源">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-10-07T01:24:00.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TensorboardX 安装和使用">
+<meta name="twitter:description" content="TensorboardX 安装和使用前提：在远程GPU服务器上安装 install1.打开终端，连接服务器2.激活anaconda环境，source activate study3.安装tensorflow(cpu版本的就行了因为需要用它来进行网页端的显示,tensorflow-gpu安装的很烦的，要对应版本号的cuda和cudnn)pip install tensorflow || 或者从清华源">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TensorboardX 安装和使用</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="https://github.com/Aprilpoem">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+         
+          <li><a href="/artWork/">ArtWork</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/10/07/Image和tensor图像转换问题/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/11/30/机器学习笔记 – 对模型的评估/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&text=TensorboardX 安装和使用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&is_video=false&description=TensorboardX 安装和使用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TensorboardX 安装和使用&body=Check out this article: http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&name=TensorboardX 安装和使用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TensorboardX-安装和使用"><span class="toc-number">1.</span> <span class="toc-text">TensorboardX 安装和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install"><span class="toc-number">2.</span> <span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两次端口转发"><span class="toc-number">3.</span> <span class="toc-text">两次端口转发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地浏览器打开localhost-16006"><span class="toc-number">5.</span> <span class="toc-text">本地浏览器打开localhost:16006</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#export-LC-ALL-en-US-UTF-8"><span class="toc-number">6.</span> <span class="toc-text">export LC_ALL = en_US.UTF-8 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-use-tensorboardX"><span class="toc-number">7.</span> <span class="toc-text">How to use tensorboardX?</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TensorboardX 安装和使用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">学习小屋</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-12-01T15:36:50.000Z" itemprop="datePublished">2018-12-01</time>
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/tensorboardX/">tensorboardX</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="TensorboardX-安装和使用"><a href="#TensorboardX-安装和使用" class="headerlink" title="TensorboardX 安装和使用"></a>TensorboardX 安装和使用</h2><p>前提：在远程GPU服务器上安装</p>
+<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p>1.打开终端，连接服务器<br>2.激活anaconda环境，<code>source activate study</code><br>3.安装tensorflow(cpu版本的就行了因为需要用它来进行网页端的显示,tensorflow-gpu安装的很烦的，要对应版本号的cuda和cudnn)<code>pip install tensorflow</code> || 或者从清华源安装<br>4.安装tensorflowX <code>pip install tensorflowX</code></p>
+<h2 id="两次端口转发"><a href="#两次端口转发" class="headerlink" title="两次端口转发"></a>两次端口转发</h2><p>服务器上运行tensorboardx,在本机上打开显示<br><code>ssh -p55556 -L 16006:127.0.0.1:16007 username@server1_ip</code>:先把本地端口号16006映射到跳板机端口16007<br><code>ssh -L 16007:127.0.0.1:6006 username@server2_ip</code>:从端口16007映射到服务器6006端口</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>运行tensorboardX的运行例子demo.py<code>python demo.py</code><br><code>tensorboard --logdir runs</code></p>
+<h2 id="本地浏览器打开localhost-16006"><a href="#本地浏览器打开localhost-16006" class="headerlink" title="本地浏览器打开localhost:16006"></a>本地浏览器打开localhost:16006</h2><p>遇到的bug:</p>
+<blockquote>
+<p>locale.Error:unsupported locale setting//编码不统一的问题<br>使用<code>locale</code>命令</p>
+<h2 id="export-LC-ALL-en-US-UTF-8"><a href="#export-LC-ALL-en-US-UTF-8" class="headerlink" title="export LC_ALL = en_US.UTF-8 "></a><code>export LC_ALL = en_US.UTF-8</code> </h2></blockquote>
+<h2 id="How-to-use-tensorboardX"><a href="#How-to-use-tensorboardX" class="headerlink" title="How to use tensorboardX?"></a>How to use tensorboardX?</h2><p>待续</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="https://github.com/Aprilpoem">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+         
+          <li><a href="/artWork/">ArtWork</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TensorboardX-安装和使用"><span class="toc-number">1.</span> <span class="toc-text">TensorboardX 安装和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#install"><span class="toc-number">2.</span> <span class="toc-text">install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两次端口转发"><span class="toc-number">3.</span> <span class="toc-text">两次端口转发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地浏览器打开localhost-16006"><span class="toc-number">5.</span> <span class="toc-text">本地浏览器打开localhost:16006</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#export-LC-ALL-en-US-UTF-8"><span class="toc-number">6.</span> <span class="toc-text">export LC_ALL = en_US.UTF-8 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-use-tensorboardX"><span class="toc-number">7.</span> <span class="toc-text">How to use tensorboardX?</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&text=TensorboardX 安装和使用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&is_video=false&description=TensorboardX 安装和使用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TensorboardX 安装和使用&body=Check out this article: http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&title=TensorboardX 安装和使用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/12/01/tensorboardX安装和使用过程/&name=TensorboardX 安装和使用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Aprilpoem
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="https://github.com/Aprilpoem">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+         
+          <li><a href="/artWork/">ArtWork</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

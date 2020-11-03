@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件config123456789101112131415161718192021Host login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379">
+<meta name="keywords" content="ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令">
+<meta property="og:url" content="http://yoursite.com/2020/10/07/和服务器玩/index.html">
+<meta property="og:site_name" content="学习小屋">
+<meta property="og:description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件config123456789101112131415161718192021Host login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-10-07T01:24:00.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令">
+<meta name="twitter:description" content="关于ubuntu如何免密码登陆需要两次ssh连接的服务器自己完全没有和服务器打交道的经验啊！！ 记录一下 如何化两次登陆为直接登陆在~/.ssh下新建一个文件config123456789101112131415161718192021Host login   #任意名字，随便使用    HostName 192.168.1.1   #这个是跳板机的IP，支持域名    Port 1379">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Tag: ubuntu</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="https://github.com/Aprilpoem">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+         
+          <li><a href="/artWork/">ArtWork</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/10/07/算法系列-动态规划/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/10/07/Image和tensor图像转换问题/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/10/07/和服务器玩/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/10/07/和服务器玩/&text=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/10/07/和服务器玩/&is_video=false&description=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令&body=Check out this article: http://yoursite.com/2020/10/07/和服务器玩/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/10/07/和服务器玩/&name=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于ubuntu如何免密码登陆需要两次ssh连接的服务器"><span class="toc-number">1.</span> <span class="toc-text">关于ubuntu如何免密码登陆需要两次ssh连接的服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何化两次登陆为直接登陆"><span class="toc-number">2.</span> <span class="toc-text">如何化两次登陆为直接登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何上传文件到服务器-欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢"><span class="toc-number">3.</span> <span class="toc-text">如何上传文件到服务器(欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何从服务器上下载文件到本机"><span class="toc-number">4.</span> <span class="toc-text">如何从服务器上下载文件到本机</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">学习小屋</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2020-10-07T01:24:00.858Z" itemprop="datePublished">2020-10-07</time>
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/ubuntu/">ubuntu</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h4 id="关于ubuntu如何免密码登陆需要两次ssh连接的服务器"><a href="#关于ubuntu如何免密码登陆需要两次ssh连接的服务器" class="headerlink" title="关于ubuntu如何免密码登陆需要两次ssh连接的服务器"></a>关于ubuntu如何免密码登陆需要两次ssh连接的服务器</h4><p>自己完全没有和服务器打交道的经验啊！！</p>
+<p>记录一下</p>
+<h4 id="如何化两次登陆为直接登陆"><a href="#如何化两次登陆为直接登陆" class="headerlink" title="如何化两次登陆为直接登陆"></a>如何化两次登陆为直接登陆</h4><p>在~/.ssh下新建一个文件config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Host login   #任意名字，随便使用</span><br><span class="line"></span><br><span class="line">    HostName 192.168.1.1   #这个是跳板机的IP，支持域名</span><br><span class="line"></span><br><span class="line">    Port 1379      #跳板机端口</span><br><span class="line"></span><br><span class="line">    User username       #跳板机用户username</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/id_rsa   #验证跳板机的秘钥对 -&gt;不写也可以，可以直接上传到跳板机上</span><br><span class="line"></span><br><span class="line">Host nginx      #同样，任意名字，随便起</span><br><span class="line"></span><br><span class="line">    HostName 192.168.1.5  #真正登陆的服务器，不支持域名必须IP地址</span><br><span class="line"></span><br><span class="line">    Port 2000   #服务器的端口</span><br><span class="line"></span><br><span class="line">    User test   #服务器的用户</span><br><span class="line"></span><br><span class="line">    IdentityFile ~/.ssh/lei.pem    #服务的密钥对，可以和跳板机的一样，也可以不一样</span><br><span class="line"></span><br><span class="line">    ProxyCommand ssh username@login -W %h:%p  #指定代理</span><br></pre></td></tr></table></figure></p>
+<p>然后直接<code>ssh nginx</code>就可以直接登陆服务器了<br>第一次可能需要输入密码</p>
+<h4 id="如何上传文件到服务器-欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢"><a href="#如何上传文件到服务器-欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢" class="headerlink" title="如何上传文件到服务器(欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢)"></a>如何上传文件到服务器(欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢)</h4><p><code>scp -P端口号 文件/文件夹 username@ip地址：目标地址</code><br>举个例子<br>跳板机地址： 192.168.1.12:2222<br><code>scp -P2222 test.txt wendy@192.168.1.12:/home/des</code>就可以把本机上的test.txt上传到服务器home/des目录下</p>
+<h4 id="如何从服务器上下载文件到本机"><a href="#如何从服务器上下载文件到本机" class="headerlink" title="如何从服务器上下载文件到本机"></a>如何从服务器上下载文件到本机</h4><p><code>scp -P(port)username@serverIP:/path/filename /var/www/local_dir（本地目录）</code><br>举个例子<br><code>scp -P2222 wendy@192.168.1.12:/home/des/test.txt /var/wendy</code><br>把服务器上home/des目录下的test.txt下载到本机/var/wendy目录下</p>
+<p>note:这些操作都是在本地电脑上操作的</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="https://github.com/Aprilpoem">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+         
+          <li><a href="/artWork/">ArtWork</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于ubuntu如何免密码登陆需要两次ssh连接的服务器"><span class="toc-number">1.</span> <span class="toc-text">关于ubuntu如何免密码登陆需要两次ssh连接的服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何化两次登陆为直接登陆"><span class="toc-number">2.</span> <span class="toc-text">如何化两次登陆为直接登陆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何上传文件到服务器-欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢"><span class="toc-number">3.</span> <span class="toc-text">如何上传文件到服务器(欸好奇怪不知道为什么我这里上传到跳板机，目标服务器也出现了相应文件呢)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何从服务器上下载文件到本机"><span class="toc-number">4.</span> <span class="toc-text">如何从服务器上下载文件到本机</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2020/10/07/和服务器玩/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2020/10/07/和服务器玩/&text=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2020/10/07/和服务器玩/&is_video=false&description=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令&body=Check out this article: http://yoursite.com/2020/10/07/和服务器玩/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2020/10/07/和服务器玩/&title=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2020/10/07/和服务器玩/&name=关于ubuntu如何免密码登陆需要两次ssh连接的服务器+文件传输命令&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Aprilpoem
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">HOME</a></li>
+         
+          <li><a href="/archives/">ARTICLES</a></li>
+         
+          <li><a href="https://github.com/Aprilpoem">PROJECT</a></li>
+         
+          <li><a href="/about/">ABOUT</a></li>
+         
+          <li><a href="/artWork/">ArtWork</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
